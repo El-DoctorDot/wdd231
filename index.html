@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <meta name="description" content="Practical exercise page with a page describing about me">
+    <meta name="author" content="Sam Guedes">
+
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/home-large.css">
+
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/course.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="top-header">
+        <div class="logo-container">
+            <img src="images/logo.svg" alt="website logo" class="logo">
+
+            <span class="site-name">Site Name</span>
+        </div>
+
+        <button id="menu">=</button>
+        
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.hmtl">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">Final</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        <div class="main-title">
+            <h1>Home</h1>
+        </div>
+        <h2>About Me</h2>
+        <div class="container">
+                <div class="left-panel">
+                    <section>
+                        <p>Massa facilisis per purus si imperdiet cursus amet. Et fames lorem mi pharetra congue nascetur enim consectetur sociosquam natoque risus. 
+                            Odio vehicula libero nisi viverra augue commodo pretium vivamus at duis magna quam fringilla convallis ridiculus malesuada accumsan potenti magnis voluptat nulla ipsum. 
+                            Dis Maecenas et praesent class fringilla.</p>
+                    </section>
+                </div>
+            <div class="right-panel">
+                <h2 class="Student">Student Photo</h2>
+                <section class="content">
+            
+                    <div class="photo"></div>
+                </section>
+            </div>
+        </div>
+        <div class="bottom-panel">
+
+                <section>
+                        <h2>Web Certificate Courses</h2>
+                            <div class="courses">
+                                <div class="course-btn">CSE</div>
+                                    <div class="course-btn">WDD</div>
+                            </div>
+                                <div>Total credits listed above is 6</div>
+                    <div class="courses">
+                        <div class="course-btn">WDD 130</div>
+                        <div class="course-btn">WDD 231</div>
+                    </div>
+                </section>
+        </div>
+    </main>
+
+    <footer>
+         <p>&copy; <span id="currentyear"></span> | Sam Guedes | Brazil</p>
+
+        <p><span id="lastmodified"></span></p>
+    </footer>
+</body>
+</html>
