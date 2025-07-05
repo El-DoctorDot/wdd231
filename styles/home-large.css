@@ -1,0 +1,30 @@
+
+@media (min-width: 320px) {
+    body,
+    main,
+    footer {
+        max-width: 100%;
+        margin: 0.5rem auto;
+        padding: 0.5rem;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .left-panel,
+    .right-panel,
+    .bottom-panel {
+        width: 100%;
+    }
+
+    .course-card {
+        width: 100%;
+        max-width: 100%; /* Garante que o cartão use a largura total */
+    }
+
+    .filter-btn {
+        width: 100%; /* Botões ocupam a largura total */
+    }
+}

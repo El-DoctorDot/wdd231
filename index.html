@@ -45,10 +45,10 @@
         <div class="main-title">
             <h1>Home</h1>
         </div>
-        <h2>About Me</h2>
         <div class="container">
                 <div class="left-panel">
-                    <section>
+                    <h2 class="title">About Me</h2>
+                    <section class="text">
                         <p>Massa facilisis per purus si imperdiet cursus amet. Et fames lorem mi pharetra congue nascetur enim consectetur sociosquam natoque risus. 
                             Odio vehicula libero nisi viverra augue commodo pretium vivamus at duis magna quam fringilla convallis ridiculus malesuada accumsan potenti magnis voluptat nulla ipsum. 
                             Dis Maecenas et praesent class fringilla.</p>
@@ -62,20 +62,17 @@
                 </section>
             </div>
         </div>
-        <div class="bottom-panel">
-
-                <section>
-                        <h2>Web Certificate Courses</h2>
-                            <div class="courses">
-                                <div class="course-btn">CSE</div>
-                                    <div class="course-btn">WDD</div>
-                            </div>
-                                <div>Total credits listed above is 6</div>
-                    <div class="courses">
-                        <div class="course-btn">WDD 130</div>
-                        <div class="course-btn">WDD 231</div>
-                    </div>
-                </section>
+       <div class="bottom-panel">
+            <section>
+                <h2>Web Certificate Courses</h2>
+                <div class="filter-container">
+                    <button class="filter-btn" onclick="filterCourses('all')">All Courses</button>
+                    <button class="filter-btn" onclick="filterCourses('WDD')">WDD Courses</button>
+                    <button class="filter-btn" onclick="filterCourses('CSE')">CSE Courses</button>
+                </div>
+                <div id="course-groups"></div>
+                <div id="total-credits"></div>
+            </section>
         </div>
     </main>
 
