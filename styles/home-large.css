@@ -66,4 +66,9 @@ section.content {
   .logo-grade{
     justify-content: center;
   }
+  nav.navigation a:hover {
+  background-color: var(--color-primary);
+  color: black;
+  border-radius: 3px;
+}
 }

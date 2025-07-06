@@ -70,6 +70,11 @@ nav.navigation a {
     font-weight: bold;
     font-size: 0.9rem;
 }
+nav.navigation a:hover {
+  background-color: var(--color-primary);
+  color: black;
+  border-radius: 3px;
+}
 
 .main-title h1 {
     font-size: 1.5rem; 
@@ -211,4 +216,9 @@ footer {
     flex-direction: row;
     margin-top: 15px;
     justify-content: center;
+}
+nav.navigation a.active {
+  text-decoration: underline;
+  background-color: var(--color-primary);
+  color: var(--color-text);
 }
