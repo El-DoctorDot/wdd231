@@ -1,30 +1,69 @@
+@media screen and (min-width: 1200px) {
+  .container {
+    display: flex;
+    gap: 20px; 
+  }
+  section.text {
+    background-color: var(--color-primary); 
+    color: var(--color-text);
+    padding: 20px;
+    min-height: 280px;
+}
 
-@media (min-width: 320px) {
-    body,
-    main,
-    footer {
-        max-width: 100%;
-        margin: 0.5rem auto;
-        padding: 0.5rem;
-    }
+section.content {
+    background-color: var(--color-primary); 
+    color: #fff;
+    padding: 20px;
+    min-height: 280px;
+}
 
-    .container {
-        flex-direction: column;
-        gap: 10px;
-    }
+  .left-panel {
+    flex: 2;
+  }
 
-    .left-panel,
-    .right-panel,
-    .bottom-panel {
-        width: 100%;
-    }
+  .right-panel {
+    flex: 1;
+  }
 
-    .course-card {
-        width: 100%;
-        max-width: 100%; /* Garante que o cartão use a largura total */
-    }
+  nav.navigation {
+    flex-direction: row;
+    display: flex;
+  }
 
-    .filter-btn {
-        width: 100%; /* Botões ocupam a largura total */
+  nav.navigation ul {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .filter-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #course-groups {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    width: 100%;
+  }
+
+  .course-card {
+    width: 200px;
+  }
+
+  .photo {
+    height: 200px;
+    width: 200px;
+  }
+  #menu {
+        display: none;
     }
+  .filter-btn{
+    width: 470px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  .logo-grade{
+    justify-content: center;
+  }
 }

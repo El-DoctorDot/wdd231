@@ -84,7 +84,7 @@ function renderCourses(filteredCourses) {
                 card.innerHTML = `<strong>${course.subject} ${course.number} - ${course.title}</strong><br>$Credits: ${course.credits} | Technologies: ${course.technology.join(', ')}`;
                 container.appendChild(card);
             });
-            totalCreditsDiv.textContent = `Total credits listed above is ${totalCredits}`;
+            totalCreditsDiv.textContent = `The Total credits for course listed above is ${totalCredits}`;
         }
 
         function filterCourses(filter) {
