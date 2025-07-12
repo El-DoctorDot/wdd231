@@ -1,0 +1,243 @@
+:root {
+    --color-primary:#2E4A2B;
+    --color-secondary: #72452d;
+    --color-accent: black;
+    --color-text: white;
+}
+
+.roboto-uniquifier {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+header,
+footer,
+main,
+main div {
+    max-width: 100%;
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+header.top-header{
+    background: linear-gradient(to right, var(--color-primary), #208315);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    padding: 1rem;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.website-name {
+    display: block;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    color: var(--color-text);
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.logo{
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: 40px;
+}
+
+nav.navigation {
+    display: none;
+    flex-direction: column; 
+    margin-top: 5px;
+    padding: 5px;
+}
+
+nav.navigation.open {
+  display: flex;
+}
+
+nav.navigation ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    padding: 0;
+    margin: 0;
+}
+
+nav.navigation a {
+    color: var(--color-text);
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+nav.navigation a:hover {
+  background-color: var(--color-primary);
+  color: black;
+  border-radius: 3px;
+}
+
+#menu {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    z-index: 1100;
+    color: var(--color-accent);
+    border: none;
+    font-size: 1.5rem; 
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; 
+  margin-top: 2rem;
+  height: 60px;
+}
+
+#list,
+#grid
+{
+    background-color: white;
+    width: 40px;
+    border-radius: 3px;
+}
+li.active a {
+    background-color:var(--color-accent);
+    border-radius: 3px;
+}
+
+.cards h2{
+    margin-left: 10px;
+    text-align: center;
+}
+.cards p{
+    margin-left: 10px;
+    text-align: center;
+}
+.cards a{
+  margin-left: 10px;
+  display: block;
+  width:fit-content ;
+  margin: 0 auto;
+}
+.cards img{
+    margin-left: 10px;
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+}
+
+.card {
+    border: 15px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.cards section{
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(4, 4, 4, 0.2);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    height: 300px;
+}
+
+.card-list {
+    display: block;
+    border-collapse: collapse;
+}
+.card-list tr:nth-child(odd) {
+    background-color: rgba(171, 215, 237, 0.811);
+    display: block;
+}
+.card-list tr:nth-child(even) {
+    background-color: transparent;
+    display: block;
+}
+.card-list td {
+    border: 1px solid #000;
+    padding: 8px;
+    display: block;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 2rem;
+  background-color: #f5f5f5;
+  gap: 2rem;
+  background: linear-gradient(to right, var(--color-secondary), #451d07);
+  color: var(--color-text);
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: #f2f2f2;
+  margin-top: 20px;
+}
+
+
+footer .content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 0.3rem;
+}
+
+
+footer .social-media {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+
+footer .footer-copyright {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 0.3rem;
+}
+
+footer .logo {
+  width: 60px;
+  height: auto;
+}
+
+.content p {
+  margin: 0;               
+  padding: 0;
+}
+
+.footer-copyright p {
+  margin: 0;               
+  padding: 0;
+  line-height: 1.2;      
+}

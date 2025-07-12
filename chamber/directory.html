@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Local Business Directory – João Pessoa Chamber of Commerce</title>
+
+    <meta name="description" content="Discover local businesses and organizations that are members of the chamber of commerce. Find services, products, and contact information from trusted local members.">
+    <meta name="author" content="Sam Guedes">
+
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/directory.css">
+    <link rel="stylesheet" href="styles/directory-large.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+
+    <script src="scripts/directory.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/members.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+
+</head>
+<body>
+    <header class="top-header">
+        <div class="logo-container">
+            <img src="images/logo.svg" alt="website logo" class="logo">
+            <span class="website-name">João Pessoa Chamber of Commerce</span>
+        </div>
+
+        <button id="menu" class="hamburger">☰</button>
+
+        <nav class="navigation">
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        <h1 id="title" class="hidden">Business Directory</h1>
+
+        <div class="menu">
+            <button id="grid">▦</button>
+            <button id="list">▤</button>
+        </div>
+
+        <div id="members-cards" class="cards"></div>
+        <table id="members-list"class="card-list"></table>
+    </main>
+    <footer>
+        <section class="content">
+            <p> 
+                <strong>João Pessoa Chamber of Commercer</strong>
+            </p>
+
+            <p>8765 João Pessoa Way</p>
+            <p>João Pessoa, Paraiba 999</p>
+            <p>info@JoãoPessoa.org</p>
+            <p>(467) 5576-3500</p>
+        </section>
+        <section class="social-media">
+            <img src="images/linkendl.svg" alt="linkendl logo" class="logo">
+            <img src="images/git.svg" alt="github logo" class="logo">
+            <img src="images/twitter.svg" alt="twitter logo" class="logo">
+        </section>
+        <section class="footer-copyright">
+            <p>WDD231 Class Project</p>
+            <p>| Sam Guedes |</p>
+            <p>&copy; <span id="currentyear"></span> João Pessoa Chamber Commercer </p>
+            <p><span id="lastmodified"></span></p>
+        </section>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,87 @@
+{
+    "members":[
+    
+  {
+    "name": "GreenTech Solutions",
+    "address": "123 Eco Street, João Pessoa, PB",
+    "phone": "+55 (83) 3000-1234",
+    "website": "https://greentech.com.br",
+    "image": "images/greentech.svg",
+    "membership": 3,
+    "description": "A leading provider of eco-friendly energy solutions."
+  },
+  {
+    "name": "Praia Mar Hotel",
+    "address": "456 Beira Mar Avenue, João Pessoa, PB",
+    "phone": "+55 (83) 3000-5678",
+    "website": "https://praiamarhotel.com.br",
+    "image": "images/hotel.svg",
+    "membership": 2,
+    "description": "Luxury beachfront hotel with panoramic ocean views."
+  },
+  {
+    "name": "Nordeste Café",
+    "address": "789 Flower Street, João Pessoa, PB",
+    "phone": "+55 (83) 3333-0000",
+    "website": "https://nordestecafe.com",
+    "image": "images/coffe.svg",
+    "membership": 1,
+    "description": "Local coffee shop serving artisan brews and pastries."
+  },
+  {
+    "name": "TechWorks João Pessoa",
+    "address": "2000 Industrial Avenue, João Pessoa, PB",
+    "phone": "+55 (83) 3222-8899",
+    "website": "https://techworksjp.com.br",
+    "image": "images/tech.svg",
+    "membership": 3,
+    "description": "Coworking space and tech incubator for startups."
+  },
+  {
+    "name": "Saúde & Vida Clinic",
+    "address": "100 Health Street, João Pessoa, PB",
+    "phone": "+55 (83) 9999-8888",
+    "website": "https://saudevida.com.br",
+    "image": "images/saude.svg",
+    "membership": 2,
+    "description": "Family medical clinic offering modern healthcare services."
+  },
+  {
+    "name": "Paraíba Design Store",
+    "address": "55 Art Street, João Pessoa, PB",
+    "phone": "+55 (83) 3010-2233",
+    "website": "https://paraibadesign.com",
+    "image": "images/designer.svg",
+    "membership": 1,
+    "description": "Home decor and furniture inspired by local craftsmanship."
+  },
+  {
+    "name": "João Pessoa Finance",
+    "address": "202 Bank Street, João Pessoa, PB",
+    "phone": "+55 (83) 3344-5566",
+    "website": "https://jpf.com.br",
+    "image": "images/coin.svg",
+    "membership": 2,
+    "description": "Finance and consulting services for small businesses."
+  },
+  {
+    "name": "Auto Forte Motors",
+    "address": "BR-230 Km 20, João Pessoa, PB",
+    "phone": "+55 (83) 3122-7788",
+    "website": "https://autoforte.com.br",
+    "image": "images/motor.svg",
+    "membership": 3,
+    "description": "Authorized dealership for luxury and utility vehicles."
+  },
+  {
+    "name": "Global Language School",
+    "address": "404 Knowledge Street, João Pessoa, PB",
+    "phone": "+55 (83) 3222-1010",
+    "website": "https://globalidiomas.com",
+    "image": "images/language.svg",
+    "membership": 1,
+    "description": "Language school offering English, Spanish, and French courses."
+  }
+    ]
+
+}
