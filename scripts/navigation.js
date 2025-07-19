@@ -1,9 +1,9 @@
-const menuBtn = document.querySelector('#ham-btn')
-const nav = document.querySelector('.navigation')
+const navbutton = document.querySelector('#ham-btn')
+const navbar = document.querySelector('.navigation')
 const main = document.querySelector('main');
 
-menuBtn.addEventListener('click', () => {
-    nav.classList.toggle('open');
+navbutton.addEventListener('click', () => {
+    navbar.classList.toggle('open');
     main.classList.toggle('main-shifted');
-    menuBtn.textContent = nav.classList.contains('open') ? 'X' : '≡';
+    navbutton.textContent = nav.classList.contains('open') ? 'X' : '≡';
 });
