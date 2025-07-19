@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Local Business Directory - João Pessoa Chamber of Commerce</title>
+
+    <meta name="description" content="Discover local news, weather updates, community highlights, and business spotlights on our engaging homepage.">
+    <meta name="author" content="Sam Guedes">
+
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/index-large.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/weather.js" defer></script>
+    <script src="scripts/spotlight.js" defer></script>
+
+    <meta property="og:title" content="Local Business Directory – João Pessoa Chamber of Commerce">
+    <meta property="og:description" content="Discover local news, weather updates, community highlights, and business spotlights on our engaging homepage.">
+    <meta property="og:image" content="https://el-doctordot.github.io/wdd231/chamber/images/screenshothome.png">
+    <meta property="og:url" content="https://el-doctordot.github.io/wdd231/chamber/index.html">
+
+
+</head>
+<body>
+    <header class="top-header">
+        <div class="logo-container">
+            <img src="images/logo.svg" alt="website logo" class="logo">
+            <span class="website-name">João Pessoa Chamber of Commerce</span>
+        </div>
+
+        <button id="menu" class="hamburger">☰</button>
+
+        <nav class="navigation">
+            <ul class="nav-list">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        <div class="hero">
+            <img src="images/heroimage.jpg" alt="Beach at sunset with colorful sky">
+
+            <button id="mybutton" onclick="window.location.href='join.html'">Join Us</button>
+        </div>
+        <h1>Home</h1>
+        <section class="grid-container">
+            <div class="events">
+                <h2>Events</h2>
+
+                <ul>
+                    <li>Community Beach Cleanup – July 27 at 9:00 AM</li>
+                    <li>Local Business Fair – August 3 at the City Park</li>
+                    <li>Sunset Yoga Session – August 10 at 6:30 PM on the beach</li>
+                </ul>
+            </div>
+            <div class="weather">
+                <h2>Current Weather</h2>
+                
+                <figure>
+                    <img id="weather-icon" src="#" alt="weather icon">
+                    <figcaption id="weather-description"></figcaption>
+                </figure>
+                <p class="current-temp"></p>
+            </div>
+            <div class="forecast">
+                <h2>Weather Forecast</h2>
+                <p><strong>Today:</strong><span id="weather-today"></span></p>
+                <p><strong>Sunday:</strong><span id="weather-tomorrow"></span></p>
+                <p><strong>Monday:</strong><span id="weather-overtomorrow"></span></p>
+            </div>
+            <div id="spotlight-cards"></div>
+        </section>
+    </main>
+
+    <footer>
+        <section class="content">
+            <p> 
+                <strong>João Pessoa Chamber of Commercer</strong>
+            </p>
+
+            <p>8765 João Pessoa Way</p>
+            <p>João Pessoa, Paraiba 999</p>
+            <p>info@JoãoPessoa.org</p>
+            <p>(467) 5576-3500</p>
+        </section>
+        <section class="social-media">
+            <img src="images/linkendl.svg" alt="linkendl logo" class="logo">
+            <img src="images/git.svg" alt="github logo" class="logo">
+            <img src="images/twitter.svg" alt="twitter logo" class="logo">
+        </section>
+        <section class="footer-copyright">
+            <p>WDD231 Class Project</p>
+            <p>| Sam Guedes |</p>
+            <p>&copy; <span id="currentyear"></span> João Pessoa Chamber Commercer </p>
+            <p><span id="lastmodified"></span></p>
+        </section>
+    </footer>
+</body>
+</html>
