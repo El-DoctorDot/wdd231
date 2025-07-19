@@ -76,24 +76,32 @@ const container = document.getElementById("course-groups");
 const totalCreditsDiv = document.getElementById("total-credits");
 
 function renderCourses(filteredCourses) {
-            container.innerHTML = '';
-            const totalCredits = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
-            filteredCourses.forEach(course => {
-                const card = document.createElement('div');
-                card.className = `course-card ${course.completed ? 'completed' : ''}`;
-                card.innerHTML = `<strong>${course.subject} ${course.number} - ${course.title}</strong><br>$Credits: ${course.credits} | Technologies: ${course.technology.join(', ')}`;
-                container.appendChild(card);
-            });
-            totalCreditsDiv.textContent = `The Total credits for course listed above is ${totalCredits}`;
-        }
+    container.innerHTML = '';
+    const totalCredits = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
+    filteredCourses.forEach(course => {
+        const card = document.createElement('div');
+        card.className = `course-card ${course.completed ? 'completed' : ''}`;
+        card.innerHTML = `<strong>${course.subject} ${course.number} - ${course.title}</strong><br>Credits: ${course.credits} | Technologies: ${course.technology.join(', ')}`;
+        container.appendChild(card);
+    });
+    totalCreditsDiv.textContent = `The Total credits for course listed above is ${totalCredits}`;
+}
 
-        function filterCourses(filter) {
-            let filteredCourses = courses;
-            if (filter !== 'all') {
-                filteredCourses = courses.filter(course => course.subject === filter);
-            }
-            renderCourses(filteredCourses);
-        }
+function filterCourses(filter) {
+    let filteredCourses = courses;
+    if (filter !== 'all') {
+        filteredCourses = courses.filter(course => course.subject === filter);
+    }
+    renderCourses(filteredCourses);
+}
 
-        
-        filterCourses('all');
+const filterAll = document.querySelector('#filter-all');
+const filterWDD = document.querySelector('#filter-wdd');
+const filterCSE = document.querySelector('#filter-cse');
+
+filterAll.addEventListener('click', () => filterCourses('all'));
+filterWDD.addEventListener('click', () => filterCourses('WDD'));
+filterCSE.addEventListener('click', () => filterCourses('CSE'));
+
+
+filterCourses('all');
