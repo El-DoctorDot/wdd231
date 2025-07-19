@@ -197,7 +197,7 @@ footer {
     text-align: center;
     font-size: 0.8rem; 
 }
-#menu {
+#ham-btn {
     display: block;
     position: absolute;
     right: 10px;

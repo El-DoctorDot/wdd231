@@ -1,4 +1,4 @@
-const menuBtn = document.querySelector('#menu')
+const menuBtn = document.querySelector('#ham-btn')
 const nav = document.querySelector('.navigation')
 const main = document.querySelector('main');
 
