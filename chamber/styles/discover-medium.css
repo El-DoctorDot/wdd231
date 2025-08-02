@@ -1,0 +1,72 @@
+@media only screen and (min-width: 641px) {
+    #cards-container .card {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        grid-template-areas: 
+            "photo name"
+            "photo address"
+            "photo description"
+            "photo button";
+        column-gap: 20px;
+        row-gap: 4px;
+        align-items: start;
+    }
+
+    #cards-container .card figure {
+    overflow: visible;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(4, 4, 4, 0.2);
+}
+
+#cards-container .card img {
+    width: 100%;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+#cards-container .card img:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+
+    #cards-container .card h2,
+    #cards-container .card address {
+        margin: 0;
+        padding: 0;
+    }
+     #sidebar-content {
+    background-color: #3e8dca;
+    padding: 15px 15px 15px 25px;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    height: fit-content;
+    position: absolute;
+    color: white;
+    top: 20px;
+    right: 20px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 999;
+    clip-path: polygon(/*how to edit the clip-path. Follow the instructions below:*/
+
+    -20px 0%,   /* Starts a little to the right at the top */
+    0% 15%,     /* First tip out */
+    20px 50%,   /* Close the first tip */
+    20px 50%,   /* Go to the second end */
+    0% 85%,       /* Second end out */      
+    -20px 100%,    /* Close the second end at the bottom */ 
+    100% 100%,   /* Bottom right corner */   
+    100% 0% /* Top right corner */
+         
+);
+}
+
+
+
+#sidebar-content.show {
+    opacity: 1;
+}
+
+}

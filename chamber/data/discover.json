@@ -1,0 +1,60 @@
+{
+    "discover":[
+        {
+            "name": "Beach of Cabo Branco",
+            "address": "Av. Cabo Branco, João Pessoa",
+            "description": "Cabo Branco is a Brazilian urban beach in João Pessoa, the capital of the state of Paraíba. With fine, hard-packed sand, the beach also features coconut trees and 'living cliffs', a name given to the natural phenomena that affect the cliffs as high as 40 meters.",
+            "photos": "./images/praiadecabobranco.webp"
+        },
+
+        {
+            "name": "Beach of Tambáu",
+            "address": "Av. Tambáu, João Pessoa",
+            "description":"Tambaú is an urban beach located in the neighborhood of the same name in João Pessoa, Paraíba state. Stretching 1.2 km, it features fine, hard-packed sand and blue-green waters.",
+            "photos":"./images/praiadetambau.webp"
+        },
+
+        {
+            "name":"Beach of Red Sand",
+            "address":"Cabedelo, Paraíba",
+            "description": "Areia Vermelha is a sandbank about two kilometers long. It always appears at low tide and is a great place for swimming, as it has natural pools and corals, in clear, light green water.",
+            "photos":"./images/areiavermelha.webp"
+        },
+
+        {
+            "name": "Cabo Branco Lighthouse",
+            "address": "Av. Cabo Branco, 1915, João Pessoa",
+            "description": "The Cabo Branco Lighthouse sits atop a cliff on Cabo Branco beach in João Pessoa, the capital of the Brazilian state of Paraíba. The building is located approximately 800 meters north of Ponta do Seixas, the easternmost point of continental Brazil. The lighthouse, with its unique triangular shape, is one of the most important and visited landmarks of the Paraíba state capital.",
+            "photos": "./images/lighthousecabobranco.webp"
+        },
+
+        {
+            "name":"Beach of Aligator",
+            "address": "Estr. Pôr do Sol Jacaré 1000, Cabedelo, PB",
+            "description":"Jacaré Beach is a must-see destination in João Pessoa, Paraíba, known for its stunning sunsets and attractions like Ravel's Bolero.",
+            "photos":"./images/praiadojacare.webp"
+        },
+
+        {
+            "name":"Beach of Ponta de Campina",
+            "address":"Cabedelo, Paraíba",
+            "description":"Ponta de Campina is a beach with clear sand and calm seas, ideal for swimming and water sports such as windsurfing and jet skiing.",
+            "photos": "./images/pontadecampina.webp"
+        },
+
+        {
+            "name":"Beach of Tambaba",
+            "address": "Conde, Paraíba",
+            "description": "Tambaba Beach is one of the most beautiful in Brazil. It is famous for its natural beauty, including colorful cliffs and a famous coconut tree that grew on a rock.",
+            "photos":"./images/tambaba.webp"
+        },
+
+        {
+            "name":"Central of João Pessoa",
+            "address": "Downtown neighborhood, João Pessoa",
+            "description":"It is a place where national historical heritage is found",
+            "photos":"./images/centro.webp"
+        }
+
+    ]
+}
