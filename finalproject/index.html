@@ -131,6 +131,85 @@
         </div>
     </div>
 
+    <div class="text">
+        <h3>Join F1 Stories</h3>
+    </div>
+
+    <form id="membershipForm" method="get" action="thankyou.html">
+            <fieldset>
+                <legend>Membership Application</legend>
+
+                <label>
+                    Full Name*
+                    <input type="text" name="fullname" title="Enter your full name" autocomplete="name" pattern="[A-Za-z\s]{2,}" required>
+                </label>
+
+                <label>
+                    Email Address*
+                    <input type="email" name="email" title="Enter your email address" autocomplete="email" placeholder="e.g. example@f1stories.com" required>
+                </label>
+
+                <label>
+                    Phone*
+                    <input type="tel" name="phone" title="Enter your phone number" autocomplete="tel" pattern="[0-9]{10,15}" placeholder="e.g. 1234567890" required>
+                </label>
+
+                <label>
+                    Membership Level*
+                    <select name="membershipLevel" title="Choose your membership level" required>
+                        <option value="" disabled selected>Select an Option</option>
+                        <option value="fan">Fan Membership (Free)</option>
+                        <option value="silver">Silver Membership ($500/year)</option>
+                        <option value="gold">Gold Membership ($1000/year)</option>
+                    </select>
+                </label>
+
+                <label>
+                    Message
+                    <textarea name="message" title="Enter any additional comments or questions" placeholder="Tell us why you love F1!"></textarea>
+                </label>
+
+                <input type="hidden" id="formTimestamp" name="formTimestamp" value="">
+            </fieldset>
+
+            <input type="submit" value="Submit Application" class="submit-button">
+        </form>
+
+        <section class="membership-levels">
+            <h2>Membership Levels</h2>
+            <div class="level-grid">
+                <div class="level-card">
+                    <h3>Fan Membership</h3>
+                    <p>Free</p>
+                    <ul>
+                        <li>Access to community forums</li>
+                        <li>Monthly F1 Stories newsletter</li>
+                        <li>Exclusive webinars</li>
+                    </ul>
+                </div>
+                <div class="level-card">
+                    <h3>Silver Membership</h3>
+                    <p>$500/year</p>
+                    <ul>
+                        <li>All Fan benefits</li>
+                        <li>Priority event access</li>
+                        <li>Advanced analytics dashboard</li>
+                        <li>Recognition on our website</li>
+                    </ul>
+                </div>
+                <div class="level-card">
+                    <h3>Gold Membership</h3>
+                    <p>$1000/year</p>
+                    <ul>
+                        <li>All Silver benefits</li>
+                        <li>VIP event access</li>
+                        <li>Dedicated account manager</li>
+                        <li>Customized F1 content</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-content">

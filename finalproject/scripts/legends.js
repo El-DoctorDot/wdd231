@@ -1,133 +1,148 @@
-import { F1DataAPI, LocalStorageManager, ModalManager, DataFilter, ContentGenerator } from './utils.js';
+import { F1DataAPI, ContentGenerator, ModalManager, DataFilter } from './utils.js';
 
-let appData = {
-  drivers: [],
-  teams: [],
-  races: [],
-  techEvolutions: [],
-  userPreferences: LocalStorageManager.getItem('f1Preferences', {
-    favoriteDrivers: [],
-    theme: 'light',
-    language: 'en'
-  })
-};
-
-document.addEventListener('DOMContentLoaded', async () => {
+async function loadContent() {
   try {
-    await initializeApp();
-  } catch (error) {
-    console.error('Error initializing Legends:', error);
-    showError(error.message);
-  }
-});
+    ModalManager.openModal('loadingModal');
+    const data = await F1DataAPI.fetchData('all');
 
-async function initializeApp() {
-  ModalManager.setupModalEvents();
-  ModalManager.openModal('loadingModal');
-
-  try {
-    const data = await F1DataAPI.fetchData();
-    appData = { ...appData, ...data };
-    populateGrids();
-    setupSearch();
-    saveUserPreferences();
-    ModalManager.closeModal('loadingModal');
-  } catch (error) {
-    ModalManager.closeModal('loadingModal');
-    throw error;
-  }
-}
-
-function populateGrids() {
-  const driversGrid = document.getElementById('driversGrid');
-  const teamsGrid = document.getElementById('teamsGrid');
-  const racesGrid = document.getElementById('racesGrid');
-
-  if (driversGrid) {
-    const championDrivers = DataFilter.getChampionDrivers(appData.drivers);
-    driversGrid.innerHTML = championDrivers
+    // Load drivers
+    const driversGrid = document.getElementById('driversGrid');
+    driversGrid.innerHTML = DataFilter.getChampionDrivers(data.drivers)
       .map(driver => ContentGenerator.generateDriverCard(driver))
       .join('');
-  }
-  if (teamsGrid) {
-    teamsGrid.innerHTML = appData.teams
+
+    // Add click events to driver cards
+    const driverCards = document.querySelectorAll('.card[data-id]');
+    driverCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const driverId = parseInt(card.getAttribute('data-id'));
+        showDriverDetails(driverId);
+      });
+    });
+
+    // Load teams
+    const teamsGrid = document.getElementById('teamsGrid');
+    teamsGrid.innerHTML = data.teams
       .map(team => ContentGenerator.generateTeamCard(team))
       .join('');
-  }
-  if (racesGrid) {
-    const memorableRaces = DataFilter.getMemorableRaces(appData.races);
-    racesGrid.innerHTML = memorableRaces
+
+    // Load memorable races
+    const racesGrid = document.getElementById('racesGrid');
+    racesGrid.innerHTML = DataFilter.getMemorableRaces(data.races)
       .map(race => ContentGenerator.generateRaceCard(race))
       .join('');
-  }
-}
 
-function setupSearch() {
-  const searchInput = document.getElementById('searchInput');
-  if (searchInput) {
-    searchInput.addEventListener('input', () => {
-      const query = searchInput.value;
-      const filteredDrivers = DataFilter.filterDriversBySearch(appData.drivers, query);
-      const driversGrid = document.getElementById('driversGrid');
-      if (driversGrid) {
-        driversGrid.innerHTML = filteredDrivers
-          .map(driver => ContentGenerator.generateDriverCard(driver))
-          .join('');
-      }
-    });
-  }
-}
-
-function showError(message) {
-  const errorMessage = document.getElementById('errorMessage');
-  if (errorMessage) {
-    errorMessage.textContent = `Error loading data: ${message}. Make sure the file data/f1data.json is in the correct directory.`;
-  }
-  ModalManager.openModal('errorModal');
-}
-
-window.retryDataLoad = async function() {
-  ModalManager.closeModal('errorModal');
-  try {
-    await initializeApp();
+    ModalManager.closeModal('loadingModal');
   } catch (error) {
-    showError(error.message);
+    ModalManager.openModal('errorModal');
+    document.getElementById('errorMessage').textContent = `Failed to load legends data: ${error.message}`;
   }
-};
-
-function saveUserPreferences() {
-  LocalStorageManager.setItem('f1Preferences', appData.userPreferences);
 }
 
-window.showTab = function(tabName) {
-  document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-  document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-  document.getElementById(`${tabName}Tab`).classList.add('active');
-  document.querySelector(`[onclick="showTab('${tabName}')"]`).classList.add('active');
-};
-
-window.clearSearch = function() {
-  const searchInput = document.getElementById('searchInput');
-  if (searchInput) {
-    searchInput.value = '';
-    populateGrids();
-  }
-};
-
-window.showDriverDetails = function(driverId) {
-  const driver = appData.drivers.find(d => d.id === driverId);
-  if (driver) {
-    const modalContent = ContentGenerator.generateDriverModal(driver);
-    const modal = document.getElementById('driverModal');
-    if (modal) {
-      modal.querySelector('#driverModalContent').innerHTML = modalContent;
+async function showDriverDetails(driverId) {
+  try {
+    const drivers = await F1DataAPI.fetchData('drivers');
+    const driver = drivers.find(d => d.id === driverId);
+    if (driver) {
+      const modalContent = document.querySelector('#driverModal .modal-content');
+      modalContent.innerHTML = ContentGenerator.generateDriverModal(driver);
       ModalManager.openModal('driverModal');
     }
+  } catch (error) {
+    ModalManager.openModal('errorModal');
+    document.getElementById('errorMessage').textContent = `Failed to load driver details: ${error.message}`;
   }
-};
+}
 
-window.closeModal = function(modalId) {
-  ModalManager.closeModal(modalId);
-};
+function showTab(tabId) {
+  // Remove 'active' class from all tabs and contents
+  document.querySelectorAll('.tab-button').forEach(button => {
+    button.classList.remove('active');
+  });
+  document.querySelectorAll('.tab-content').forEach(content => {
+    content.classList.remove('active');
+  });
 
-console.log('F1 Stories - Legends Page Launched');
+  // Add 'active' class to selected tab and content
+  document.getElementById(`${tabId}TabButton`).classList.add('active');
+  document.getElementById(`${tabId}Tab`).classList.add('active');
+}
+
+function clearSearch() {
+  const searchInput = document.getElementById('searchInput');
+  searchInput.value = '';
+  searchInput.dispatchEvent(new Event('input')); // Trigger search update
+}
+
+async function handleSearch() {
+  const searchInput = document.getElementById('searchInput');
+  const query = searchInput.value.trim();
+  try {
+    const drivers = await F1DataAPI.fetchData('drivers');
+    const filteredDrivers = DataFilter.filterDriversBySearch(drivers, query);
+    const driversGrid = document.getElementById('driversGrid');
+    driversGrid.innerHTML = filteredDrivers
+      .map(driver => ContentGenerator.generateDriverCard(driver))
+      .join('');
+
+    // Re-add click events to driver cards after search
+    const driverCards = document.querySelectorAll('.card[data-id]');
+    driverCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const driverId = parseInt(card.getAttribute('data-id'));
+        showDriverDetails(driverId);
+      });
+    });
+  } catch (error) {
+    ModalManager.openModal('errorModal');
+    document.getElementById('errorMessage').textContent = `Failed to load search results: ${error.message}`;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  ModalManager.setupModalEvents();
+
+  // Hero button to navigate to attributions.html
+  const heroButton = document.getElementById('heroButton');
+  if (heroButton) {
+    heroButton.addEventListener('click', () => {
+      window.location.href = 'attributions.html';
+    });
+  }
+
+  // Clear search button
+  const clearSearchButton = document.getElementById('clearSearchButton');
+  if (clearSearchButton) {
+    clearSearchButton.addEventListener('click', clearSearch);
+  }
+
+  // Tab buttons
+  const driversTabButton = document.getElementById('driversTabButton');
+  const teamsTabButton = document.getElementById('teamsTabButton');
+  const racesTabButton = document.getElementById('racesTabButton');
+  
+  if (driversTabButton) {
+    driversTabButton.addEventListener('click', () => showTab('drivers'));
+  }
+  if (teamsTabButton) {
+    teamsTabButton.addEventListener('click', () => showTab('teams'));
+  }
+  if (racesTabButton) {
+    racesTabButton.addEventListener('click', () => showTab('races'));
+  }
+
+  // Modal close button
+  const driverModalClose = document.getElementById('driverModalClose');
+  if (driverModalClose) {
+    driverModalClose.addEventListener('click', () => ModalManager.closeModal('driverModal'));
+  }
+
+  // Search input
+  const searchInput = document.getElementById('searchInput');
+  if (searchInput) {
+    searchInput.addEventListener('input', handleSearch);
+  }
+
+  // Load initial content
+  loadContent();
+});

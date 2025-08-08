@@ -48,12 +48,6 @@
                     <a href="evolution.html" class="nav-link">
                         <span>Evolution</span>
                     </a>
-                    <a href="contact.html" class="nav-link">
-                        <span>Contact Us</span>
-                    </a>
-                    <a href="attributions.html" class="nav-link">
-                        <span>Attributions</span>
-                    </a>
                 </div>
             </div>
         </nav>
@@ -67,6 +61,7 @@
                 <p class="hero-subtitle">
                     The greatest drivers and teams that made history
                 </p>
+                <button class="hero-button" id="heroButton">Explore Attributions</button>
             </div>
         </section>
 
@@ -80,13 +75,13 @@
                         placeholder="Search drivers by name, nationality, or team..."
                         class="search-input"
                     >
-                    <button onclick="clearSearch()" class="clear-button">Clear</button>
+                    <button id="clearSearchButton" class="clear-button">Clear</button>
                 </div>
                 
                 <div class="filter-tabs">
-                    <button class="tab-button active" onclick="showTab('drivers')">Drivers</button>
-                    <button class="tab-button" onclick="showTab('teams')">Teams</button>
-                    <button class="tab-button" onclick="showTab('races')">Memorable Races</button>
+                    <button id="driversTabButton" class="tab-button active">Drivers</button>
+                    <button id="teamsTabButton" class="tab-button">Teams</button>
+                    <button id="racesTabButton" class="tab-button">Memorable Races</button>
                 </div>
             </div>
         </section>
@@ -131,9 +126,9 @@
     </main>
 
     <!-- Driver Detail Modal -->
-    <div id="driverModal" class="modal">
+    <div id="driverModal" class="modal" role="dialog" aria-modal="true">
         <div class="modal-content modal-large">
-            <span class="modal-close" onclick="closeModal('driverModal')">&times;</span>
+            <span id="driverModalClose" class="modal-close">&times;</span>
             <div id="driverModalContent">
                 <!-- Content will be loaded dynamically -->
             </div>
@@ -155,13 +150,6 @@
                 <p class="footer-description">
                     Relive the greatest stories of Formula 1 — a high-speed journey into the past
                 </p>
-                <nav class="footer-nav">
-                    <a href="index.html">Home</a>
-                    <a href="contact.html">Contact Us</a>
-                    <a href="legends.html">Legends</a>
-                    <a href="evolution.html">Evolution</a>
-                    <a href="attributions.html">Attributions</a>
-                </nav>
 
                 <p>&copy; <span id="currentyear"></span> | Sam Guedes | Brazil</p>
                 <p><span id="lastmodified"></span></p>

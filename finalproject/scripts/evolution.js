@@ -1,56 +1,69 @@
 import { F1DataAPI, ContentGenerator, ModalManager } from './utils.js';
 
-// Function to load and display the timeline
-async function loadTimeline() {
+async function loadEvolutions() {
+  try {
     ModalManager.openModal('loadingModal');
-    try {
-        const techEvolutions = await F1DataAPI.fetchData('techEvolutions');
-        const timeline = document.getElementById('evolutionTimeline');
-        if (timeline) {
-            timeline.innerHTML = techEvolutions
-                .map(evolution => ContentGenerator.generateTimelineItem(evolution))
-                .join('');
-        }
-        ModalManager.closeModal('loadingModal');
-    } catch (error) {
-        ModalManager.closeModal('loadingModal');
-        ModalManager.openModal('errorModal');
-        const errorMessage = document.getElementById('errorMessage');
-        if (errorMessage) {
-            errorMessage.textContent = 'Failed to load technological evolutions. Please try again.';
-        }
-    }
+    const evolutions = await F1DataAPI.fetchData('techEvolutions');
+    const timeline = document.getElementById('evolutionTimeline');
+    timeline.innerHTML = evolutions.map(evo => ContentGenerator.generateTimelineItem(evo)).join('');
+
+    // Add click events to timeline items
+    const timelineItems = document.querySelectorAll('.timeline-item[data-id]');
+    timelineItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const evolutionId = parseInt(item.getAttribute('data-id'));
+        showEvolutionDetails(evolutionId);
+      });
+    });
+
+    ModalManager.closeModal('loadingModal');
+  } catch (error) {
+    ModalManager.openModal('errorModal');
+    document.getElementById('errorMessage').textContent = `Failed to load evolutions: ${error.message}`;
+  }
 }
 
-// Function to display evolution details in a modal
-window.showEvolutionDetails = async function(id) {
-    try {
-        const techEvolutions = await F1DataAPI.fetchData('techEvolutions');
-        const evolution = techEvolutions.find(e => e.id === id);
-        if (evolution) {
-            const modalContent = document.getElementById('evolutionModalContent');
-            if (modalContent) {
-                modalContent.innerHTML = ContentGenerator.generateEvolutionModal(evolution);
-                ModalManager.openModal('evolutionModal');
-            }
-        }
-    } catch (error) {
-        ModalManager.openModal('errorModal');
-        const errorMessage = document.getElementById('errorMessage');
-        if (errorMessage) {
-            errorMessage.textContent = 'Failed to load evolution details. Please try again.';
-        }
+async function showEvolutionDetails(evolutionId) {
+  try {
+    const evolutions = await F1DataAPI.fetchData('techEvolutions');
+    const evolution = evolutions.find(e => e.id === evolutionId);
+    if (evolution) {
+      const modalContent = document.querySelector('#evolutionModal .modal-content');
+      modalContent.innerHTML = ContentGenerator.generateEvolutionModal(evolution);
+      ModalManager.openModal('evolutionModal');
     }
-};
+  } catch (error) {
+    ModalManager.openModal('errorModal');
+    document.getElementById('errorMessage').textContent = `Failed to load evolution details: ${error.message}`;
+  }
+}
 
-// Function to retry loading data
-window.retryDataLoad = function() {
-    ModalManager.closeModal('errorModal');
-    loadTimeline();
-};
+function retryDataLoad() {
+  ModalManager.closeModal('errorModal');
+  loadEvolutions();
+}
 
-// Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
-    ModalManager.setupModalEvents();
-    loadTimeline();
+  ModalManager.setupModalEvents();
+
+  // Evolution modal close button
+  const evolutionModalClose = document.getElementById('evolutionModalClose');
+  if (evolutionModalClose) {
+    evolutionModalClose.addEventListener('click', () => ModalManager.closeModal('evolutionModal'));
+  }
+
+  // Error modal close button
+  const errorModalClose = document.getElementById('errorModalClose');
+  if (errorModalClose) {
+    errorModalClose.addEventListener('click', () => ModalManager.closeModal('errorModal'));
+  }
+
+  // Retry button
+  const retryButton = document.getElementById('retryButton');
+  if (retryButton) {
+    retryButton.addEventListener('click', retryDataLoad);
+  }
+
+  // Load initial content
+  loadEvolutions();
 });
