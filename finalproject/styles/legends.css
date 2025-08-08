@@ -221,6 +221,9 @@ body {
     transform: translateY(-2px);
     box-shadow: var(--shadow-hover);
 }
+.section-header{
+    display: block;
+}
 
 /* Content Section */
 .content-section {
