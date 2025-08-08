@@ -1,0 +1,55 @@
+@media  screen and (min-width:720px) {
+    /* Navigation */
+.hamburger {
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+    position: static;
+    width: auto;
+    background: none;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    box-shadow: none;
+}
+
+.nav-link {
+    width: auto;
+    text-align: left;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+/* Hero Section */
+.hero {
+    padding: 150px 40px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+}
+
+/* Content Section */
+.content-section {
+    padding: 100px 40px;
+}
+
+/* Grid Layouts */
+.content-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Modal */
+.modal-content {
+    max-width: 500px;
+    width: 90%;
+    margin: 0;
+}
+}

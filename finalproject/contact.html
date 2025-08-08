@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>F1 Stories - Formula 1 Legends</title>
+
+    <meta name="description" content="Join the F1 Stories community by filling out our membership form. Connect with fellow racing enthusiasts, relive iconic moments, and unlock exclusive Formula 1 content.">
+    <meta name="author" content="Sam Guedes">
+
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="styles/form-large.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+
+    <script src="scripts/form.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+
+    <meta property="og:title" content="F1 Stories - Formula 1 Legends">
+    <meta property="og:description" content="Join the F1 Stories community by filling out our membership form. Connect with fellow racing enthusiasts, relive iconic moments, and unlock exclusive Formula 1 content.">
+    <meta property="og:image" content="https://el-doctordot.github.io/wdd231/finalproject/images/contactscreenshot.png">
+    <meta property="og:url" content="https://el-doctordot.github.io/wdd231/finalproject/contact.html">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span class="logo-text">F1 Stories</span>
+                </div>
+                <button class="hamburger" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">
+                        <span>Origins</span>
+                    </a>
+                    <a href="legends.html" class="nav-link">
+                        <span>Legends</span>
+                    </a>
+                    <a href="evolution.html" class="nav-link">
+                        <span>Evolution</span>
+                    </a>
+                    <a href="contact.html" class="nav-link active">
+                        <span>Contact Us</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="grid-container">
+        <h1>Join F1 Stories</h1>
+        <form id="membershipForm" method="get" action="thankyou.html">
+            <fieldset>
+                <legend>Membership Application</legend>
+
+                <label>
+                    Full Name*
+                    <input type="text" name="fullname" title="Enter your full name" autocomplete="name" pattern="[A-Za-z\s]{2,}" required>
+                </label>
+
+                <label>
+                    Email Address*
+                    <input type="email" name="email" title="Enter your email address" autocomplete="email" placeholder="e.g. example@f1stories.com" required>
+                </label>
+
+                <label>
+                    Phone*
+                    <input type="tel" name="phone" title="Enter your phone number" autocomplete="tel" pattern="[0-9]{10,15}" placeholder="e.g. 1234567890" required>
+                </label>
+
+                <label>
+                    Membership Level*
+                    <select name="membershipLevel" title="Choose your membership level" required>
+                        <option value="" disabled selected>Select an Option</option>
+                        <option value="fan">Fan Membership (Free)</option>
+                        <option value="silver">Silver Membership ($500/year)</option>
+                        <option value="gold">Gold Membership ($1000/year)</option>
+                    </select>
+                </label>
+
+                <label>
+                    Message
+                    <textarea name="message" title="Enter any additional comments or questions" placeholder="Tell us why you love F1!"></textarea>
+                </label>
+
+                <input type="hidden" id="formTimestamp" name="formTimestamp" value="">
+            </fieldset>
+
+            <input type="submit" value="Submit Application" class="submit-button">
+        </form>
+
+        <section class="membership-levels">
+            <h2>Membership Levels</h2>
+            <div class="level-grid">
+                <div class="level-card">
+                    <h3>Fan Membership</h3>
+                    <p>Free</p>
+                    <ul>
+                        <li>Access to community forums</li>
+                        <li>Monthly F1 Stories newsletter</li>
+                        <li>Exclusive webinars</li>
+                    </ul>
+                </div>
+                <div class="level-card">
+                    <h3>Silver Membership</h3>
+                    <p>$500/year</p>
+                    <ul>
+                        <li>All Fan benefits</li>
+                        <li>Priority event access</li>
+                        <li>Advanced analytics dashboard</li>
+                        <li>Recognition on our website</li>
+                    </ul>
+                </div>
+                <div class="level-card">
+                    <h3>Gold Membership</h3>
+                    <p>$1000/year</p>
+                    <ul>
+                        <li>All Silver benefits</li>
+                        <li>VIP event access</li>
+                        <li>Dedicated account manager</li>
+                        <li>Customized F1 content</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">F1 Stories</div>
+                <p class="footer-description">
+                    Relive the greatest stories of Formula 1 — a high-speed journey into the past
+                </p>
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="legends.html">Legends</a>
+                    <a href="evolution.html">Evolution</a>
+                    <a href="attributions.html">Attributions</a>
+                </nav>
+
+                <p>&copy; <span id="currentyear"></span> | Sam Guedes | Brazil</p>
+                <p><span id="lastmodified"></span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

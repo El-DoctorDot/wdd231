@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>F1 Stories - Thank You</title>
+
+    <meta name="description" content="Thank you for joining the F1 Stories community! Your membership application has been received.">
+    <meta name="author" content="Sam Guedes">
+
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="styles/form-large.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+
+    <script src="scripts/thankyou.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+
+    <meta property="og:title" content="F1 Stories - Thank You">
+    <meta property="og:description" content="Thank you for joining the F1 Stories community! Your membership application has been received.">
+    <meta property="og:image" content="https://el-doctordot.github.io/wdd231/finalproject/images/thankyou.png">
+    <meta property="og:url" content="https://el-doctordot.github.io/wdd231/finalproject/thankyou.html">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span class="logo-text">F1 Stories</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">
+                        <span>Origins</span>
+                    </a>
+                    <a href="legends.html" class="nav-link">
+                        <span>Legends</span>
+                    </a>
+                    <a href="evolution.html" class="nav-link">
+                        <span>Evolution</span>
+                    </a>
+                    <a href="contact.html" class="nav-link active">
+                        <span>Contact Us</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="grid-container">
+        <h1>Thank You for Joining!</h1>
+        <section class="submission-details">
+            <h2>Your Application Details</h2>
+            <div id="formData">
+                <p><strong>Full Name:</strong> <span id="fullname"></span></p>
+                <p><strong>Email:</strong> <span id="email"></span></p>
+                <p><strong>Phone:</strong> <span id="phone"></span></p>
+                <p><strong>Membership Level:</strong> <span id="membershipLevel"></span></p>
+                <p><strong>Message:</strong> <span id="message"></span></p>
+                <p><strong>Submission Date:</strong> <span id="formTimestamp"></span></p>
+            </div>
+            <a href="contact.html" class="back-button">Submit Another Application</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">F1 Stories</div>
+                <p class="footer-description">
+                    Relive the greatest stories of Formula 1 — a high-speed journey into the past
+                </p>
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="legends.html">Legends</a>
+                    <a href="evolution.html">Evolution</a>
+                </nav>
+
+                <p>&copy; <span id="currentyear"></span> | Sam Guedes | Brazil</p>
+                <p><span id="lastmodified"></span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>F1 Stories - Technological Evolution</title>
+
+    <meta name="description" content="Discover the technological evolution of Formula 1, from early innovations to modern breakthroughs that transformed the sport.">
+    <meta name="author" content="Sam Guedes">
+
+    <link rel="icon" href="favicon-v2.ico">
+    <link rel="stylesheet" href="styles/evolution.css">
+    <link rel="stylesheet" href="styles/evolution-large.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+
+    <meta property="og:title" content="F1 Stories - Technological Evolution">
+    <meta property="og:description" content="Discover the technological evolution of Formula 1, from early innovations to modern breakthroughs that transformed the sport.">
+    <meta property="og:image" content="https://el-doctordot.github.io/wdd231/finalproject/images/evolutionscreenshot.png">
+    <meta property="og:url" content="https://el-doctordot.github.io/wdd231/finalproject/evolution.html">
+
+    <script type="module" src="scripts/evolution.js"></script>
+    <script src="scripts/utils.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span class="logo-text">F1 Stories</span>
+                </div>
+                <button class="hamburger" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">
+                        <span>Origins</span>
+                    </a>
+                    <a href="legends.html" class="nav-link">
+                        <span>Legends</span>
+                    </a>
+                    <a href="evolution.html" class="nav-link active">
+                        <span>Evolution</span>
+                    </a>
+                    <a href="contact.html" class="nav-link">
+                        <span>Contact Us</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="hero evolution-hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Technological Evolution</h1>
+                <p class="hero-subtitle">
+                    How technology revolutionized Formula 1
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Innovation Timeline</h2>
+                    <p>The main technological advancements that transformed the sport</p>
+                </div>
+
+                <div class="timeline" id="evolutionTimeline">
+                    <!-- Timeline will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="evolutionModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="modal-close" onclick="closeModal('evolutionModal')">&times;</span>
+            <div id="evolutionModalContent">
+                <!-- Content will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <div id="loadingModal" class="modal">
+        <div class="modal-content">
+            <h3>Loading F1 Evolution Data...</h3>
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('errorModal')">&times;</span>
+            <h3>Error loading data</h3>
+            <p id="errorMessage"></p>
+            <button onclick="retryDataLoad()" class="retry-button">Try Again</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">F1 Stories</div>
+                <p class="footer-description">
+                    Relive the greatest stories of Formula 1 — a high-speed journey into the past
+                </p>
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="legends.html">Legends</a>
+                    <a href="evolution.html">Evolution</a>
+                    <a href="attributions.html">Attributions</a>
+                </nav>
+
+                <p>&copy; <span id="currentyear"></span> | Sam Guedes | Brazil</p>
+                <p><span id="lastmodified"></span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

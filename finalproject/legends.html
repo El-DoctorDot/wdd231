@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>F1 Stories - Formula 1 Legends</title>
+
+    <meta name="description" content="Relive the greatest stories in Formula 1 — a high-speed journey into the past. Discover the most iconic drivers, teams, and races in F1 history.">
+    <meta name="author" content="Sam Guedes">
+
+    <link rel="icon" href="favicon-v2.ico">
+    <link rel="stylesheet" href="styles/legends.css">
+    <link rel="stylesheet" href="styles/legends-large.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+
+    <script type="module" src="scripts/legends.js"></script>
+    <script src="scripts/utils.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+
+    <meta property="og:title" content="Relive the greatest stories in Formula 1 — a high-speed journey into the past. Discover the most iconic drivers, teams, and races in F1 history.">
+    <meta property="og:image" content="https://el-doctordot.github.io/wdd231/finalproject/images/legendscreenshot.png">
+    <meta property="og:url" content="https://el-doctordot.github.io/wdd231/finalproject/legends.html">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span class="logo-text">F1 Stories</span>
+                </div>
+                <button class="hamburger" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">
+                        <span>Origins</span>
+                    </a>
+                    <a href="legends.html" class="nav-link active">
+                        <span>Legends</span>
+                    </a>
+                    <a href="evolution.html" class="nav-link">
+                        <span>Evolution</span>
+                    </a>
+                    <a href="contact.html" class="nav-link">
+                        <span>Contact Us</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero legends-hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Formula 1 Legends</h1>
+                <p class="hero-subtitle">
+                    The greatest drivers and teams that made history
+                </p>
+            </div>
+        </section>
+
+        <!-- Search and Filter Section -->
+        <section class="filter-section">
+            <div class="container">
+                <div class="search-container">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Search drivers by name, nationality, or team..."
+                        class="search-input"
+                    >
+                    <button onclick="clearSearch()" class="clear-button">Clear</button>
+                </div>
+                
+                <div class="filter-tabs">
+                    <button class="tab-button active" onclick="showTab('drivers')">Drivers</button>
+                    <button class="tab-button" onclick="showTab('teams')">Teams</button>
+                    <button class="tab-button" onclick="showTab('races')">Memorable Races</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <section class="content-section">
+            <div class="container">
+                <!-- Drivers Tab -->
+                <div id="driversTab" class="tab-content active">
+                    <div class="section-header">
+                        <h2>Legendary Drivers</h2>
+                        <p>The greatest champions in Formula 1 history</p>
+                    </div>
+                    <div class="grid" id="driversGrid">
+                        <!-- Drivers will be loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Teams Tab -->
+                <div id="teamsTab" class="tab-content">
+                    <div class="section-header">
+                        <h2>Historic Teams</h2>
+                        <p>The iconic teams that shaped Formula 1</p>
+                    </div>
+                    <div class="grid" id="teamsGrid">
+                        <!-- Teams will be loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Races Tab -->
+                <div id="racesTab" class="tab-content">
+                    <div class="section-header">
+                        <h2>Memorable Races</h2>
+                        <p>The most thrilling moments in F1 history</p>
+                    </div>
+                    <div class="grid" id="racesGrid">
+                        <!-- Drivers will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Driver Detail Modal -->
+    <div id="driverModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="modal-close" onclick="closeModal('driverModal')">&times;</span>
+            <div id="driverModalContent">
+                <!-- Content will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Modal -->
+    <div id="loadingModal" class="modal">
+        <div class="modal-content">
+            <h3>Loading F1 Legends...</h3>
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">F1 Stories</div>
+                <p class="footer-description">
+                    Relive the greatest stories of Formula 1 — a high-speed journey into the past
+                </p>
+                <nav class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="legends.html">Legends</a>
+                    <a href="evolution.html">Evolution</a>
+                    <a href="attributions.html">Attributions</a>
+                </nav>
+
+                <p>&copy; <span id="currentyear"></span> | Sam Guedes | Brazil</p>
+                <p><span id="lastmodified"></span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

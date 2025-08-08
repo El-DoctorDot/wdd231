@@ -1,0 +1,410 @@
+{
+  "drivers": [
+    {
+      "id": 1,
+      "name": "Lewis Hamilton",
+      "nationality": "British",
+      "championships": 7,
+      "wins": 103,
+      "podiums": 197,
+      "image": "images/lewishamilton.webp",
+      "team": "Mercedes",
+      "biography": "Considered one of the greatest drivers of all time, Lewis Hamilton is known for his exceptional skill and social activism."
+    },
+    {
+      "id": 2,
+      "name": "Michael Schumacher",
+      "nationality": "German",
+      "championships": 7,
+      "wins": 91,
+      "podiums": 155,
+      "image": "images/michaelschumacher.webp",
+      "team": "Ferrari",
+      "biography": "An absolute F1 legend, Michael Schumacher dominated the 2000s with Ferrari and redefined what it meant to be a champion."
+    },
+    {
+      "id": 3,
+      "name": "Ayrton Senna",
+      "nationality": "Brazilian",
+      "championships": 3,
+      "wins": 41,
+      "podiums": 80,
+      "image": "images/ayrtonsenna.webp",
+      "team": "McLaren",
+      "biography": "A Brazilian idol and regarded as the best rain driver of all time, Senna made history in the 80s and 90s."
+    },
+    {
+      "id": 4,
+      "name": "Alain Prost",
+      "nationality": "French",
+      "championships": 4,
+      "wins": 51,
+      "podiums": 106,
+      "image": "images/alainprost.webp",
+      "team": "McLaren",
+      "biography": "Known as 'The Professor', Prost was famous for his tactical intelligence and epic rivalry with Senna."
+    },
+    {
+      "id": 5,
+      "name": "Juan Manuel Fangio",
+      "nationality": "Argentine",
+      "championships": 5,
+      "wins": 24,
+      "podiums": 35,
+      "image": "images/juanmanuelfangio.webp",
+      "team": "Various",
+      "biography": "A legend from the early days of F1, Fangio dominated the 1950s and set the standard for future champions."
+    },
+    {
+      "id": 6,
+      "name": "Max Verstappen",
+      "nationality": "Dutch",
+      "championships": 3,
+      "wins": 54,
+      "podiums": 98,
+      "image": "images/maxverstappen.webp",
+      "team": "Red Bull",
+      "biography": "Current world champion, Verstappen represents the new generation of highly skilled drivers."
+    },
+    {
+      "id": 7,
+      "name": "Fernando Alonso",
+      "nationality": "Spanish",
+      "championships": 2,
+      "wins": 32,
+      "podiums": 98,
+      "image": "images/fernandoalonso.webp",
+      "team": "Aston Martin",
+      "biography": "Two-time world champion known for extracting maximum performance from less competitive cars."
+    },
+    {
+      "id": 8,
+      "name": "Niki Lauda",
+      "nationality": "Austrian",
+      "championships": 3,
+      "wins": 25,
+      "podiums": 54,
+      "image": "images/nikilauda.webp",
+      "team": "Ferrari",
+      "biography": "Famous for his determination and comeback after the horrific 1976 crash at Nürburgring."
+    },
+    {
+      "id": 9,
+      "name": "Sebastian Vettel",
+      "nationality": "German",
+      "championships": 4,
+      "wins": 53,
+      "podiums": 122,
+      "image": "images/sebastianvettel.webp",
+      "team": "Red Bull",
+      "biography": "Four-time consecutive champion from 2010–2013, known for his precision and technical knowledge."
+    },
+    {
+      "id": 10,
+      "name": "Jackie Stewart",
+      "nationality": "British",
+      "championships": 3,
+      "wins": 27,
+      "podiums": 43,
+      "image": "images/jackiestewart.webp",
+      "team": "Tyrrell",
+      "biography": "Safety pioneer in F1 and three-time world champion in the 60s and 70s."
+    },
+  {
+    "id": 11,
+    "name": "Jim Clark",
+    "nationality": "British",
+    "championships": 2,
+    "wins": 25,
+    "podiums": 32,
+    "image": "images/jimclark.webp",
+    "team": "Lotus",
+    "biography": "Dominant in the 1960s with exceptional skill."
+  },
+  {
+    "id": 12,
+    "name": "Nelson Piquet",
+    "nationality": "Brazilian",
+    "championships": 3,
+    "wins": 23,
+    "podiums": 60,
+    "image": "images/nelsonpiquet.webp",
+    "team": "Brabham",
+    "biography": "Known for his technical expertise and three titles."
+  },
+  {
+    "id": 13,
+    "name": "Kimi Räikkönen",
+    "nationality": "Finnish",
+    "championships": 1,
+    "wins": 21,
+    "podiums": 103,
+    "image": "images/kimiraikkonen.webp",
+    "team": "Ferrari",
+    "biography": "The 'Iceman' won the 2007 championship."
+  },
+  {
+    "id": 14,
+    "name": "Mika Häkkinen",
+    "nationality": "Finnish",
+    "championships": 2,
+    "wins": 20,
+    "podiums": 51,
+    "image": "images/mikahakkinen.webp",
+    "team": "McLaren",
+    "biography": "Back-to-back champion in 1998–1999."
+  },
+  {
+    "id": 15,
+    "name": "Graham Hill",
+    "nationality": "British",
+    "championships": 2,
+    "wins": 14,
+    "podiums": 36,
+    "image": "images/grahamhill.webp",
+    "team": "BRM",
+    "biography": "Versatile driver with wins in F1, Indy 500, and Le Mans."
+  }
+  ],
+  "teams": [
+    {
+      "id": 1,
+      "name": "Ferrari",
+      "nationality": "Italian",
+      "founded": 1950,
+      "championships": 16,
+      "wins": 242,
+      "drivers": ["Charles Leclerc", "Carlos Sainz"],
+      "logo": "images/ferrarilogo.webp",
+      "description": "The most historic and iconic team in Formula 1, based in Maranello, Italy."
+    },
+    {
+      "id": 2,
+      "name": "Mercedes",
+      "nationality": "German",
+      "founded": 2010,
+      "championships": 8,
+      "wins": 125,
+      "drivers": ["Lewis Hamilton", "George Russell"],
+      "logo": "images/mercedeslogo.webp",
+      "description": "Dominant in the hybrid era, Mercedes set new standards of excellence."
+    },
+    {
+      "id": 3,
+      "name": "Red Bull Racing",
+      "nationality": "Austrian",
+      "founded": 2005,
+      "championships": 6,
+      "wins": 102,
+      "drivers": ["Max Verstappen", "Sergio Pérez"],
+      "logo": "images/redbull.webp",
+      "description": "A young and aggressive team that won multiple titles with rising stars."
+    },
+    {
+      "id": 4,
+      "name": "McLaren",
+      "nationality": "British",
+      "founded": 1966,
+      "championships": 8,
+      "wins": 183,
+      "drivers": ["Lando Norris", "Oscar Piastri"],
+      "logo": "images/mclaren.webp",
+      "description": "One of the most traditional teams, home to legends like Senna and Prost."
+    },
+    {
+      "id": 5,
+      "name": "Williams",
+      "nationality": "British",
+      "founded": 1977,
+      "championships": 9,
+      "wins": 114,
+      "drivers": ["Alex Albon", "Logan Sargeant"],
+      "logo": "images/williams.webp",
+      "description": "Historic team that dominated the 80s and 90s with innovative technology."
+    }
+  ],
+  "races": [
+    {
+      "id": 1,
+      "name": "Monaco Grand Prix",
+      "circuit": "Circuit de Monaco",
+      "country": "Monaco",
+      "year": 2023,
+      "winner": "Max Verstappen",
+      "fastestLap": "Charles Leclerc",
+      "description": "The most prestigious race on the calendar, through the streets of Monte Carlo.",
+      "memorable": true,
+      "image": "images/monaco.webp"
+    },
+    {
+      "id": 2,
+      "name": "Brazilian Grand Prix",
+      "circuit": "Interlagos",
+      "country": "Brazil",
+      "year": 2023,
+      "winner": "Max Verstappen",
+      "fastestLap": "Fernando Alonso",
+      "description": "Thrilling race in Ayrton Senna's home country, always unpredictable.",
+      "memorable": true,
+      "image": "images/brazil.webp"
+    },
+    {
+      "id": 3,
+      "name": "British Grand Prix",
+      "circuit": "Silverstone",
+      "country": "United Kingdom",
+      "year": 2023,
+      "winner": "Max Verstappen",
+      "fastestLap": "Max Verstappen",
+      "description": "The home of motorsport and birthplace of Formula 1.",
+      "memorable": false,
+      "image": "images/races/silverstone_circuit.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Italian Grand Prix",
+      "circuit": "Monza",
+      "country": "Italy",
+      "year": 2023,
+      "winner": "Max Verstappen",
+      "fastestLap": "Daniel Ricciardo",
+      "description": "The temple of speed, with the unique atmosphere of the tifosi.",
+      "memorable": true,
+      "image": "images/italia.webp"
+    },
+    {
+      "id": 5,
+      "name": "Singapore Grand Prix",
+      "circuit": "Marina Bay",
+      "country": "Singapore",
+      "year": 2023,
+      "winner": "Carlos Sainz",
+      "fastestLap": "Lando Norris",
+      "description": "F1's first night race, a unique visual spectacle.",
+      "memorable": true,
+      "image": "images/singapore.webp"
+    }
+  ],
+  "techEvolutions": [
+    {
+      "id": 1,
+      "year": 2014,
+      "innovation": "Hybrid Engines",
+      "description": "Introduction of V6 turbo hybrid engines with ERS system.",
+      "impact": "Revolutionized energy efficiency and technical complexity of the cars.",
+      "image": "images/hibrido.webp"
+    },
+    {
+      "id": 2,
+      "year": 2022,
+      "innovation": "Aerodynamic Regulations",
+      "description": "New aerodynamic rules to improve racing.",
+      "impact": "Allowed for more overtaking and more exciting races.",
+      "image": "images/aerodynamic.webp"
+    },
+    {
+      "id": 3,
+      "year": 2018,
+      "innovation": "Halo",
+      "description": "Head protection system for drivers.",
+      "impact": "Saved several lives and made F1 significantly safer.",
+      "image": "images/halo.webp"
+    },
+    {
+      "id": 4,
+      "year": 1998,
+      "innovation": "Carbon Brakes",
+      "description": "Introduction of carbon fiber brake discs.",
+      "impact": "Dramatically improved braking performance.",
+      "image": "images/carbonbreak.webp"
+    },
+    {
+      "id": 5,
+      "year": 1977,
+      "innovation": "Ground Effect",
+      "description": "Cars with ground effect for greater aerodynamic grip.",
+      "impact": "Significantly increased cornering speeds.",
+      "image": "images/ground.webp"
+    },
+    {
+      "id": 6,
+      "year": 2011,
+      "innovation": "DRS (Drag Reduction System)",
+      "description": "Movable rear wing to reduce drag and increase overtaking.",
+      "impact": "Enhanced race excitement by facilitating overtakes.",
+      "image": "images/dragredution.webp"
+    },
+    {
+      "id": 7,
+      "year": 2009,
+      "innovation": "KERS (Kinetic Energy Recovery System)",
+      "description": "System to recover energy under braking for a power boost.",
+      "impact": "Introduced energy recovery, precursor to hybrid systems.",
+      "image": "images/kers.webp"
+    },
+    {
+      "id": 8,
+      "year": 1991,
+      "innovation": "Semi-Automatic Gearbox",
+      "description": "Paddle-shift gearbox for faster gear changes.",
+      "impact": "Improved shifting speed and driver focus.",
+      "image": "images/gearbox.webp"
+    },
+    {
+      "id": 9,
+      "year": 1983,
+      "innovation": "Turbo Engines",
+      "description": "Turbocharged engines for increased power.",
+      "impact": "Led to a power boom in the 1980s.",
+      "image": "images/turbo.webp"
+    },
+    {
+      "id": 10,
+      "year": 2002,
+      "innovation": "Traction Control",
+      "description": "Electronic system to prevent wheel spin.",
+      "impact": "Improved car stability, later banned for fairness.",
+      "image": "images/traction.webp"
+    },
+    {
+      "id": 11,
+      "year": 1958,
+      "innovation": "Mid-Engine Layout",
+      "description": "Engine placed behind the driver for better balance.",
+      "impact": "Became the standard design for F1 cars.",
+      "image": "images/engine.webp"
+    },
+    {
+      "id": 12,
+      "year": 1962,
+      "innovation": "Monocoque Chassis",
+      "description": "Single-piece chassis for increased rigidity.",
+      "impact": "Improved safety and handling.",
+      "image": "images/chassis.webp"
+    },
+    {
+      "id": 13,
+      "year": 1981,
+      "innovation": "Carbon Fiber Chassis",
+      "description": "Lightweight and strong carbon fiber chassis.",
+      "impact": "Enhanced safety and performance.",
+      "image": "images/carbonfiber.webp"
+    },
+    {
+      "id": 14,
+      "year": 1994,
+      "innovation": "Refueling",
+      "description": "In-race refueling to optimize strategy.",
+      "impact": "Added strategic depth, later banned.",
+      "image": "images/refueling.webp"
+    },
+    {
+      "id": 15,
+      "year": 2005,
+      "innovation": "Single Tire Supplier",
+      "description": "One tire manufacturer for all teams.",
+      "impact": "Reduced costs and leveled competition.",
+      "image": "images/pneu.webp"
+    }
+  ]
+}
