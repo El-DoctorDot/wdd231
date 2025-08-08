@@ -122,7 +122,7 @@ export class ContentGenerator {
   static generateDriverCard(driver) {
     return `
       <div class="card" onclick="showDriverDetails(${driver.id})">
-        <img class="card-image" src="${driver.image}" alt="${driver.name}" loading="lazy">
+        <img class="card-image" src="${driver.image}" alt="${driver.name}" ${isAboveFold ? '' : 'loading="lazy"'}>
         <div class="card-content">
           <h3 class="card-title">${driver.name}</h3>
           <p class="card-subtitle">${driver.nationality} • ${driver.team}</p>
@@ -210,7 +210,7 @@ export class ContentGenerator {
   static generateDriverModal(driver) {
     return `
       <div class="modal-header">
-        <img class="modal-image" src="${driver.image}" alt="${driver.name}">
+        <img class="modal-image" src="${driver.image}" alt="${driver.name}" loading="lazy">
         <div>
           <h2 class="modal-title">${driver.name}</h2>
           <p class="modal-subtitle">${driver.nationality} • ${driver.team}</p>
@@ -239,7 +239,7 @@ export class ContentGenerator {
     return `
       <h2 class="modal-title">${evolution.innovation} (${evolution.year})</h2>
       <div style="margin: 20px 0; padding: 20px; background: #f5f5f5; border-radius: 8px;">
-        <img src="${evolution.image}" alt="${evolution.innovation}" style="max-width: 100%; border-radius: 8px;">
+        <img src="${evolution.image}" alt="${evolution.innovation}" loading="lazy" style="max-width: 100%; border-radius: 8px;">
       </div>
       <h3>Description</h3>
       <p>${evolution.description}</p>
