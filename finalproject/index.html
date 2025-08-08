@@ -30,8 +30,8 @@
 <body>
     <header>
         <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-logo">
+            <div class="nav-container flex">
+                <div class="nav-logo flex text-center">
                     <span class="logo-text">F1 Stories</span>
                 </div>
                 <button class="hamburger" aria-label="Toggle navigation menu">
@@ -39,71 +39,47 @@
                     <span></span>
                     <span></span>
                 </button>
-                <div class="nav-links">
-                    <a href="index.html" class="nav-link active">
-                        <span>Origins</span>
-                    </a>
-                    <a href="legends.html" class="nav-link">
-                        <span>Legends</span>
-                    </a>
-                    <a href="evolution.html" class="nav-link">
-                        <span>Evolution</span>
-                    </a>
+                <div class="nav-links flex flex-column text-center">
+                    <a href="index.html" class="nav-link active">Origins</a>
+                    <a href="legends.html" class="nav-link">Legends</a>
+                    <a href="evolution.html" class="nav-link">Evolution</a>
                 </div>
             </div>
         </nav>
     </header>
 
     <main class="main-content">
-        <section class="hero">
+        <section class="hero text-center">
             <div class="hero-content">
                 <h1 class="hero-title">The Origins of Formula 1</h1>
-                <p class="hero-subtitle">
-                    Discover how the world's most thrilling motorsport was born
-                </p>
-                <button class="hero-button" id="heroButton">Explore History</button>
+                <p class="hero-subtitle">Discover how the world's most thrilling motorsport was born</p>
+                <button class="btn hero-button" id="heroButton">Explore History</button>
             </div>
         </section>
 
         <section class="content-section">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header text-center">
                     <h2>The History of Formula 1</h2>
                     <p>From its early beginnings to the global spectacle it is today</p>
                 </div>
 
                 <div class="content-grid">
-                    <div class="content-card">
+                    <div class="card content-card">
                         <h3>The First Steps (1950)</h3>
-                        <p>
-                            Formula 1 was officially born in 1950, but its roots go back to Grand Prix racing in the 1920s and 1930s. 
-                            The first World Championship was held at Silverstone, laying the foundation for what would become 
-                            the greatest show in motorsport.
-                        </p>
+                        <p>Formula 1 was officially born in 1950, but its roots go back to Grand Prix racing in the 1920s and 1930s. The first World Championship was held at Silverstone, laying the foundation for what would become the greatest show in motorsport.</p>
                     </div>
-
-                    <div class="content-card">
+                    <div class="card content-card">
                         <h3>The Golden Era (1960–1980)</h3>
-                        <p>
-                            During these two decades, F1 experienced pure magic. Drivers like Jim Clark, Jackie Stewart, 
-                            and Niki Lauda defined what it meant to be a world champion, while technology evolved rapidly.
-                        </p>
+                        <p>During these two decades, F1 experienced pure magic. Drivers like Jim Clark, Jackie Stewart, and Niki Lauda defined what it meant to be a world champion, while technology evolved rapidly.</p>
                     </div>
-
-                    <div class="content-card">
+                    <div class="card content-card">
                         <h3>Technological Revolution (1980–2000)</h3>
-                        <p>
-                            The introduction of turbo engines, advanced electronic systems, and composite materials 
-                            completely transformed the sport. This era saw the rise of legends like Ayrton Senna and Michael Schumacher.
-                        </p>
+                        <p>The introduction of turbo engines, advanced electronic systems, and composite materials completely transformed the sport. This era saw the rise of legends like Ayrton Senna and Michael Schumacher.</p>
                     </div>
-
-                    <div class="content-card">
+                    <div class="card content-card">
                         <h3>Modern Era (2000–Present)</h3>
-                        <p>
-                            With the arrival of hybrid engines, DRS systems, and advanced telemetry, modern F1 blends 
-                            tradition with innovation, remaining at the forefront of global automotive development.
-                        </p>
+                        <p>With the arrival of hybrid engines, DRS systems, and advanced telemetry, modern F1 blends tradition with innovation, remaining at the forefront of global automotive development.</p>
                     </div>
                 </div>
 
@@ -127,7 +103,7 @@
             <span class="modal-close" id="errorModalClose">&times;</span>
             <h3>Error loading data</h3>
             <p id="errorMessage"></p>
-            <button class="retry-button" id="retryButton">Try Again</button>
+            <button class="btn retry-button" id="retryButton">Try Again</button>
         </div>
     </div>
 
@@ -136,88 +112,78 @@
     </div>
 
     <form id="membershipForm" method="get" action="thankyou.html">
-            <fieldset>
-                <legend>Membership Application</legend>
+        <fieldset>
+            <legend>Membership Application</legend>
+            <label>
+                Full Name*
+                <input type="text" name="fullname" title="Enter your full name" autocomplete="name" pattern="[A-Za-z\s]{2,}" required>
+            </label>
+            <label>
+                Email Address*
+                <input type="email" name="email" title="Enter your email address" autocomplete="email" placeholder="e.g. example@f1stories.com" required>
+            </label>
+            <label>
+                Phone*
+                <input type="tel" name="phone" title="Enter your phone number" autocomplete="tel" pattern="[0-9]{10,15}" placeholder="e.g. 1234567890" required>
+            </label>
+            <label>
+                Membership Level*
+                <select name="membershipLevel" title="Choose your membership level" required>
+                    <option value="" disabled selected>Select an Option</option>
+                    <option value="fan">Fan Membership (Free)</option>
+                    <option value="silver">Silver Membership ($500/year)</option>
+                    <option value="gold">Gold Membership ($1000/year)</option>
+                </select>
+            </label>
+            <label>
+                Message
+                <textarea name="message" title="Enter any additional comments or questions" placeholder="Tell us why you love F1!"></textarea>
+            </label>
+            <input type="hidden" id="formTimestamp" name="formTimestamp" value="">
+        </fieldset>
+        <input type="submit" value="Submit Application" class="btn submit-button">
+    </form>
 
-                <label>
-                    Full Name*
-                    <input type="text" name="fullname" title="Enter your full name" autocomplete="name" pattern="[A-Za-z\s]{2,}" required>
-                </label>
-
-                <label>
-                    Email Address*
-                    <input type="email" name="email" title="Enter your email address" autocomplete="email" placeholder="e.g. example@f1stories.com" required>
-                </label>
-
-                <label>
-                    Phone*
-                    <input type="tel" name="phone" title="Enter your phone number" autocomplete="tel" pattern="[0-9]{10,15}" placeholder="e.g. 1234567890" required>
-                </label>
-
-                <label>
-                    Membership Level*
-                    <select name="membershipLevel" title="Choose your membership level" required>
-                        <option value="" disabled selected>Select an Option</option>
-                        <option value="fan">Fan Membership (Free)</option>
-                        <option value="silver">Silver Membership ($500/year)</option>
-                        <option value="gold">Gold Membership ($1000/year)</option>
-                    </select>
-                </label>
-
-                <label>
-                    Message
-                    <textarea name="message" title="Enter any additional comments or questions" placeholder="Tell us why you love F1!"></textarea>
-                </label>
-
-                <input type="hidden" id="formTimestamp" name="formTimestamp" value="">
-            </fieldset>
-
-            <input type="submit" value="Submit Application" class="submit-button">
-        </form>
-
-        <section class="membership-levels">
-            <h2>Membership Levels</h2>
-            <div class="level-grid">
-                <div class="level-card">
-                    <h3>Fan Membership</h3>
-                    <p>Free</p>
-                    <ul>
-                        <li>Access to community forums</li>
-                        <li>Monthly F1 Stories newsletter</li>
-                        <li>Exclusive webinars</li>
-                    </ul>
-                </div>
-                <div class="level-card">
-                    <h3>Silver Membership</h3>
-                    <p>$500/year</p>
-                    <ul>
-                        <li>All Fan benefits</li>
-                        <li>Priority event access</li>
-                        <li>Advanced analytics dashboard</li>
-                        <li>Recognition on our website</li>
-                    </ul>
-                </div>
-                <div class="level-card">
-                    <h3>Gold Membership</h3>
-                    <p>$1000/year</p>
-                    <ul>
-                        <li>All Silver benefits</li>
-                        <li>VIP event access</li>
-                        <li>Dedicated account manager</li>
-                        <li>Customized F1 content</li>
-                    </ul>
-                </div>
+    <section class="membership-levels">
+        <h2>Membership Levels</h2>
+        <div class="level-grid">
+            <div class="card level-card">
+                <h3>Fan Membership</h3>
+                <p>Free</p>
+                <ul>
+                    <li>Access to community forums</li>
+                    <li>Monthly F1 Stories newsletter</li>
+                    <li>Exclusive webinars</li>
+                </ul>
             </div>
-        </section>
+            <div class="card level-card">
+                <h3>Silver Membership</h3>
+                <p>$500/year</p>
+                <ul>
+                    <li>All Fan benefits</li>
+                    <li>Priority event access</li>
+                    <li>Advanced analytics dashboard</li>
+                    <li>Recognition on our website</li>
+                </ul>
+            </div>
+            <div class="card level-card">
+                <h3>Gold Membership</h3>
+                <p>$1000/year</p>
+                <ul>
+                    <li>All Silver benefits</li>
+                    <li>VIP event access</li>
+                    <li>Dedicated account manager</li>
+                    <li>Customized F1 content</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-content text-center">
                 <div class="footer-logo">F1 Stories</div>
-                <p class="footer-description">
-                    Relive the greatest stories of Formula 1 — a high-speed journey into the past
-                </p>
-
+                <p class="footer-description">Relive the greatest stories of Formula 1 — a high-speed journey into the past</p>
                 <p>&copy; <span id="currentyear"></span> | Sam Guedes | Brazil</p>
                 <p><span id="lastmodified"></span></p>
             </div>
