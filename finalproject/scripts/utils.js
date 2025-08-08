@@ -210,7 +210,7 @@ export class ContentGenerator {
   static generateDriverModal(driver) {
     return `
       <div class="modal-header">
-        <img class="modal-image" src="${driver.image}" alt="${driver.name}" loading="lazy">
+        <img class="modal-image" src="${driver.image}" alt="${driver.name}">
         <div>
           <h2 class="modal-title">${driver.name}</h2>
           <p class="modal-subtitle">${driver.nationality} • ${driver.team}</p>
@@ -239,7 +239,7 @@ export class ContentGenerator {
     return `
       <h2 class="modal-title">${evolution.innovation} (${evolution.year})</h2>
       <div style="margin: 20px 0; padding: 20px; background: #f5f5f5; border-radius: 8px;">
-        <img src="${evolution.image}" alt="${evolution.innovation}" style="max-width: 100%; border-radius: 8px;" loading="lazy">
+        <img src="${evolution.image}" alt="${evolution.innovation}" style="max-width: 100%; border-radius: 8px;">
       </div>
       <h3>Description</h3>
       <p>${evolution.description}</p>
