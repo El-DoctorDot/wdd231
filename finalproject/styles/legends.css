@@ -53,14 +53,10 @@ body {
     height: 64px;
     padding: 0 20px;
 }
-
 .nav-logo {
     display: flex;
     align-items: center;
     text-decoration: none;
-}
-
-.logo-text {
     font-size: 20px;
     font-weight: bold;
     background: var(--gradient-hero);
@@ -179,10 +175,7 @@ body {
     background: linear-gradient(135deg, var(--f1-gold), #e6c200);
 }
 
-.evolution-hero {
-    background: linear-gradient(135deg, var(--f1-silver), #a0a0a0);
-    color: var(--f1-black);
-}
+
 
 .hero-content {
     position: relative;

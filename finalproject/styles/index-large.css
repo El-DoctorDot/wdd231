@@ -26,4 +26,7 @@
         width: 90%;
         margin: 0;
     }
+    .stats-section{
+        text-align: center;
+    }
 }
