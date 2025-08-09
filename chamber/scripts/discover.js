@@ -21,6 +21,7 @@ function displayMembers(discoverArray) {
         const img = document.createElement("img");
         img.src = location.photos;
         img.alt = location.name;
+        img.loading = "lazy";
         figure.appendChild(img);
 
         const address = document.createElement("address");
